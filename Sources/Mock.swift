@@ -14,6 +14,8 @@ open class ListForm___LISTFORMTYPE___: UIViewController {
     open func onWillDisappear(_ animated: Bool) {}
     open func onDidDisappear(_ animated: Bool) {}
 }
+open class ListFormTable: ListForm___LISTFORMTYPE___ {}
+open class ListFormCollection: ListForm___LISTFORMTYPE___ {}
 open class DetailsForm___DETAILFORMTYPE___: UIViewController, DetailsForm {
     open func onLoad() {}
     open func onWillAppear(_ animated: Bool) {}
@@ -21,6 +23,7 @@ open class DetailsForm___DETAILFORMTYPE___: UIViewController, DetailsForm {
     open func onWillDisappear(_ animated: Bool) {}
     open func onDidDisappear(_ animated: Bool) {}
 }
+open class DetailsFormBare: DetailsForm___DETAILFORMTYPE___ {}
 
 public protocol DetailsForm {}
 extension DetailsForm {
