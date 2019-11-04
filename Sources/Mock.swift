@@ -141,3 +141,23 @@ public class BindTo {
 // MARK: - Logger
 import XCGLogger
 public let logger = XCGLogger.default
+
+// MARK: - Loggin form
+
+open class LoginForm: UIViewController {
+
+    open func onLoad() {}
+    open func onWillAppear(_ animated: Bool) {}
+    open func onDidAppear(_ animated: Bool) {}
+    open func onWillDisappear(_ animated: Bool) {}
+    open func onDidDisappear(_ animated: Bool) {}
+
+    open func onWillLogin() {}
+    // open func onDidLogin(result: Result<AuthToken, APIError>) {} // need mock api?
+
+    open var email: String { return "example@test.com" }
+    /// Return any custom informations that must be send when authenticate.
+    open var customParameters: [String: Any]? {
+          return [:]
+      }
+}
