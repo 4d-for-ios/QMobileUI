@@ -5,6 +5,7 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 public protocol ListForm {
     var tableName: String { get }
@@ -90,7 +91,7 @@ open class ListFormCollection: UICollectionViewController, ListFormSearchable {
 
 public protocol DetailsForm {}
 extension DetailsForm {
-    public var record: Record? { return nil }
+    public var record: RecordBase? { return nil}
 }
 
 open class DetailsForm___DETAILFORMTYPE___: UIViewController, DetailsForm {
@@ -107,11 +108,12 @@ open class DetailsFormBare: DetailsForm___DETAILFORMTYPE___ {}
 public protocol DataSource {
     func performFetch()
 }
-open class ___TABLE___ {
+public typealias RecordBase = NSManagedObject
+open class ___TABLE___: RecordBase {}
 
-}
+// MARK: - view binding
 public class Record: NSObject {
-    public var store: Any
+    public var store: Any // must be RecordBase
 
     init(store: [String: AnyObject]) {
         self.store = store
@@ -121,8 +123,6 @@ public class Record: NSObject {
     }
 
 }
-
-// MARK: - view binding
 
 public extension UIView {
 
