@@ -14,7 +14,7 @@ let package = Package(
             targets: ["QMobileUI"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/IBAnimatable/IBAnimatable.git", .upToNextMajor(from: "6.0.0")),
+        .package(url: "https://github.com/IBAnimatable/IBAnimatable.git", .revision("HEAD")),
         .package(url: "https://github.com/DaveWoodCom/XCGLogger.git", from: "7.0.0"),
     ],
     targets: [
