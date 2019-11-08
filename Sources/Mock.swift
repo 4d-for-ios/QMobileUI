@@ -85,6 +85,9 @@ open class ListFormCollection: UICollectionViewController, ListFormSearchable {
     open func onSearchButtonClicked() {}
     open func onSearchFetching() {}
     open func onSearchCancel() {}
+
+    @IBInspectable open var hasRefreshControl: Bool = true
+    public var refreshControl: UIRefreshControl?
 }
 
 // MARK: - data
@@ -160,4 +163,83 @@ open class LoginForm: UIViewController {
     open var customParameters: [String: Any]? {
           return [:]
       }
+}
+
+// MARK: UIApplication
+extension UIApplication {
+    open var topViewController: UIViewController? {
+        guard let rootController = self.topWindow?.rootViewController else {
+            return nil
+        }
+        return UIViewController.topViewController(rootController)
+    }
+    public static var topViewController: UIViewController? {
+        return UIApplication.shared.topViewController
+    }
+
+    @available(iOS 13.0, *)
+    public var connectedWindowScenes: [UIWindowScene] {
+        return self.connectedScenes.compactMap { $0 as? UIWindowScene }
+    }
+
+    @available(iOS 13.0, *)
+    public var topWindowScene: UIWindowScene? {
+        let scenes = connectedWindowScenes
+        return scenes.filter { $0.activationState == .foregroundActive }.first ?? scenes.first
+    }
+
+    public var topWindow: UIWindow? {
+        if #available(iOS 13.0, *) {
+            return self.topWindowScene?.windows.first
+        } else {
+            return self.keyWindow
+        }
+    }
+
+    public var statusBarHeight: CGFloat {
+        if #available(iOS 13.0, *) {
+            return self.topWindowScene?.statusBarManager?.statusBarFrame.size.height ?? 0
+        } else {
+            return statusBarFrame.size.height
+        }
+    }
+
+}
+
+// MARK: UIViewController
+extension UIViewController {
+
+    static func topViewController(_ viewController: UIViewController) -> UIViewController {
+        guard let presentedViewController = viewController.presentedViewController else {
+            return viewController
+        }
+        #if !topVCCastDisabled
+        if let navigationController = presentedViewController as? UINavigationController {
+            if let visibleViewController = navigationController.visibleViewController {
+                return topViewController(visibleViewController)
+            }
+        } else if let tabBarController = presentedViewController as? UITabBarController {
+            if let selectedViewController = tabBarController.selectedViewController {
+                return topViewController(selectedViewController)
+            }
+        }
+        #endif
+        return topViewController(presentedViewController)
+    }
+}
+
+// MARK: CGSize
+public extension CGSize {
+    func with(height: CGFloat) -> CGSize {
+        return CGSize(width: self.width, height: height)
+    }
+    func with(width: CGFloat) -> CGSize {
+        return CGSize(width: width, height: self.height)
+    }
+    func divide(by divider: CGFloat) -> CGSize {
+        return CGSize(width: self.width / divider, height: self.height / divider)
+    }
+    func inset(_ inset: UIEdgeInsets) -> CGSize {
+        return CGSize(width: self.width - inset.left - inset.right, height: self.height - inset.top - inset.bottom)
+    }
 }
