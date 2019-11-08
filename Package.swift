@@ -15,12 +15,13 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/IBAnimatable/IBAnimatable.git", .revision("HEAD")),
+        .package(url: "https://github.com/devicekit/DeviceKit", .upToNextMajor(from: "2.3.0")),
         .package(url: "https://github.com/DaveWoodCom/XCGLogger.git", from: "7.0.0"),
     ],
     targets: [
         .target(
             name: "QMobileUI",
-            dependencies: ["XCGLogger", "IBAnimatable"],
+            dependencies: ["XCGLogger", "IBAnimatable", "DeviceKit"],
             path: "Sources")
     ]
 )
