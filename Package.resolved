@@ -38,6 +38,15 @@
         }
       },
       {
+        "package": "Prephirences",
+        "repositoryURL": "https://github.com/phimage/Prephirences.git",
+        "state": {
+          "branch": "HEAD",
+          "revision": "5fbb69f7b1060dd14531a8c4f7adb9e9b4dec1c8",
+          "version": null
+        }
+      },
+      {
         "package": "QMobileAPI",
         "repositoryURL": "https://github.com/4d-for-ios/QMobileAPI.git",
         "state": {

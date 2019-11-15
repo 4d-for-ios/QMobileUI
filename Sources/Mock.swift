@@ -6,6 +6,7 @@
 import Foundation
 import UIKit
 import CoreData
+import Prephirences
 import QMobileAPI
 
 public protocol ListForm {
@@ -144,6 +145,20 @@ open class DetailsFormBare: DetailsForm___DETAILFORMTYPE___ {
     @IBAction open func firstRecord(_ sender: Any!) {}
 }
 
+// MARK: Main
+
+open class Main: UIViewController {
+    open func onLoad() {}
+    open func onWillAppear(_ animated: Bool) {}
+    open func onDidAppear(_ animated: Bool) {}
+    open func onWillDisappear(_ animated: Bool) {}
+    open func onDidDisappear(_ animated: Bool) {}
+    open var performSegue = true
+    open func appearTransition() {}
+
+    public static func instantiate() -> Self? { return nil }
+}
+
 // MARK: - data
 public protocol DataSource {
     func performFetch()
@@ -223,6 +238,26 @@ open class LoginForm: UIViewController {
     }
 
     open func performTransition(_ sender: Any? = nil) {
+    }
+}
+
+// MARK: Prephirences
+
+extension Prephirences {
+
+    public struct Auth: Prephirencable {
+
+        public struct Logout: Prephirencable {
+            public static let parent = Auth.instance
+            public static var token: String? {
+                get {
+                    return instance["token"] as? String
+                }
+                set {
+                    mutableInstance?.set(newValue, forKey: "token")
+                }
+            }
+        }
     }
 }
 

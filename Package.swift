@@ -14,6 +14,7 @@ let package = Package(
             targets: ["QMobileUI"]),
     ],
     dependencies: [
+        .package(url: "https://github.com/phimage/Prephirences.git", .revision("HEAD")),
         .package(url: "https://github.com/IBAnimatable/IBAnimatable.git", .revision("HEAD")),
         //.package(url: "https://github.com/devicekit/DeviceKit.git", .upToNextMajor(from: "2.3.0")),
         .package(url: "https://github.com/phimage/DeviceKit.git", .branch("feature/macos")),
@@ -23,7 +24,7 @@ let package = Package(
     targets: [
         .target(
             name: "QMobileUI",
-            dependencies: ["XCGLogger", "IBAnimatable", "DeviceKit", "QMobileAPI"],
+            dependencies: ["XCGLogger", "IBAnimatable", "DeviceKit", "Prephirences", "QMobileAPI"],
             path: "Sources")
     ]
 )
