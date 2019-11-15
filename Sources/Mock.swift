@@ -188,6 +188,8 @@ open class LoadingButton: UIButton {
     
     open func startAnimation() {}
     open func stopAnimation(completionHandler: (() -> Void)? = nil) {}
+    @IBInspectable open var activityIndicatorColor: UIColor = .white
+    @IBInspectable open var normalCornerRadius: CGFloat = 0.0
     
 }
 /// Delegate for login form
