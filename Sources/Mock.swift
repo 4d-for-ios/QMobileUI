@@ -110,7 +110,7 @@ open class SettingURLForm: UITableViewController {
     open func onDidDisappear(_ animated: Bool) {}
 
     @IBOutlet open var serverURLTextField: UITextField! {
-        get {}
+        get { return UITextField() }
         set {}
     }
 
