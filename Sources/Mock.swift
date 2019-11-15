@@ -108,6 +108,14 @@ open class SettingURLForm: UITableViewController {
     open func onDidAppear(_ animated: Bool) {}
     open func onWillDisappear(_ animated: Bool) {}
     open func onDidDisappear(_ animated: Bool) {}
+
+    @IBOutlet open var serverURLTextField: UITextField! {
+        get {}
+        set {}
+    }
+
+    // MARK: action
+    @IBAction open func serverURLTextFieldEndEditing(_ sender: Any?) {}
 }
 
 open class SettingsServerSectionFooter: UITableViewHeaderFooterView {}
