@@ -90,6 +90,28 @@ open class ListFormCollection: UICollectionViewController, ListFormSearchable {
     public var refreshControl: UIRefreshControl?
 }
 
+// MARK: -  Settings
+
+open class SettingsForm: UITableViewController{
+    open func onLoad() {}
+    open func onWillAppear(_ animated: Bool) {}
+    open func onDidAppear(_ animated: Bool) {}
+    open func onWillDisappear(_ animated: Bool) {}
+    open func onDidDisappear(_ animated: Bool) {}
+}
+
+open class SettingURLCell: UITableViewCell { }
+
+open class SettingURLForm: UITableViewController {
+    open func onLoad() {}
+    open func onWillAppear(_ animated: Bool) {}
+    open func onDidAppear(_ animated: Bool) {}
+    open func onWillDisappear(_ animated: Bool) {}
+    open func onDidDisappear(_ animated: Bool) {}
+}
+
+open class SettingsServerSectionFooter: UITableViewHeaderFooterView {}
+
 // MARK: - data
 
 public protocol DetailsForm {}
@@ -104,8 +126,14 @@ open class DetailsForm___DETAILFORMTYPE___: UIViewController, DetailsForm {
     open func onWillDisappear(_ animated: Bool) {}
     open func onDidDisappear(_ animated: Bool) {}
 }
-open class DetailsFormBare: DetailsForm___DETAILFORMTYPE___ {}
 
+open class DetailsFormBare: DetailsForm___DETAILFORMTYPE___ {
+
+    @IBAction open func previousRecord(_ sender: Any!) {}
+    @IBAction open func nextRecord(_ sender: Any!) {}
+    @IBAction open func lastRecord(_ sender: Any!) {}
+    @IBAction open func firstRecord(_ sender: Any!) {}
+}
 
 // MARK: - data
 public protocol DataSource {

@@ -2,6 +2,24 @@
   "object": {
     "pins": [
       {
+        "package": "DeviceKit",
+        "repositoryURL": "https://github.com/phimage/DeviceKit.git",
+        "state": {
+          "branch": "feature/macos",
+          "revision": "15fa25b33473cfbd5257cb89cae97b980973f1e9",
+          "version": null
+        }
+      },
+      {
+        "package": "IBAnimatable",
+        "repositoryURL": "https://github.com/IBAnimatable/IBAnimatable.git",
+        "state": {
+          "branch": "HEAD",
+          "revision": "6e5c91a36a8a8dd81b2eda59aefecf3773e7fca9",
+          "version": null
+        }
+      },
+      {
         "package": "XCGLogger",
         "repositoryURL": "https://github.com/DaveWoodCom/XCGLogger.git",
         "state": {
