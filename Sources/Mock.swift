@@ -135,17 +135,17 @@ open class DetailsForm___DETAILFORMTYPE___: UIViewController, DetailsForm {
     open func onDidAppear(_ animated: Bool) {}
     open func onWillDisappear(_ animated: Bool) {}
     open func onDidDisappear(_ animated: Bool) {}
-}
-
-open class DetailsFormBare: DetailsForm___DETAILFORMTYPE___ {
 
     @IBAction open func previousRecord(_ sender: Any!) {}
     @IBAction open func nextRecord(_ sender: Any!) {}
     @IBAction open func lastRecord(_ sender: Any!) {}
     @IBAction open func firstRecord(_ sender: Any!) {}
 
-    open func previousRecord() {}
-    open func nextRecord() {}
+    public func previousRecord() {}
+    public func nextRecord() {}
+}
+
+open class DetailsFormBare: DetailsForm___DETAILFORMTYPE___ {
 }
 
 // MARK: Main
