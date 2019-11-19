@@ -159,9 +159,21 @@ open class Main: UIViewController {
     public static func instantiate() -> Self? { return nil }
 }
 
+// MARK: Actions
+
+extension UIView {
+
+     open var actionSheet: ActionSheet? {
+          get { return nil }
+          set {} // swiftlint:disable:this unused_setter_value
+      }
+}
+
+
 // MARK: - data
 public protocol DataSource {
     func performFetch()
+    var fetchedRecords: [Record]? { get }
 }
 public typealias RecordBase = NSManagedObject
 open class ___TABLE___: RecordBase {}
@@ -176,6 +188,12 @@ public class Record: NSObject {
     open override func value(forKeyPath keyPath: String) -> Any? {
         return (store as? [String: AnyObject])?[keyPath]
     }
+
+    public var ___FIELD_1___: Any?
+    public var ___FIELD_2___: Any?
+    public var ___FIELD_3___: Any?
+    public var ___FIELD_4___: Any?
+    public var ___FIELD_5___: Any?
 
 }
 
