@@ -143,6 +143,9 @@ open class DetailsFormBare: DetailsForm___DETAILFORMTYPE___ {
     @IBAction open func nextRecord(_ sender: Any!) {}
     @IBAction open func lastRecord(_ sender: Any!) {}
     @IBAction open func firstRecord(_ sender: Any!) {}
+
+    open func previousRecord() {}
+    open func nextRecord() {}
 }
 
 // MARK: Main
