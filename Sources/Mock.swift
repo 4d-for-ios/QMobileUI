@@ -92,9 +92,9 @@ open class ListFormCollection: UICollectionViewController, ListFormSearchable {
     public var refreshControl: UIRefreshControl?
 }
 
-// MARK: -  Settings
+// MARK: - Settings
 
-open class SettingsForm: UITableViewController{
+open class SettingsForm: UITableViewController {
     open func onLoad() {}
     open func onWillAppear(_ animated: Bool) {}
     open func onDidAppear(_ animated: Bool) {}
@@ -200,12 +200,12 @@ public let logger = XCGLogger.default
 // MARK: - Loggin form
 
 open class LoadingButton: UIButton {
-    
+
     open func startAnimation() {}
     open func stopAnimation(completionHandler: (() -> Void)? = nil) {}
     @IBInspectable open var activityIndicatorColor: UIColor = .white
     @IBInspectable open var normalCornerRadius: CGFloat = 0.0
-    
+
 }
 /// Delegate for login form
 public protocol LoginFormDelegate: NSObjectProtocol {
@@ -230,7 +230,7 @@ open class LoginForm: UIViewController {
 
     open func onWillLogin() {}
     open func onDidLogin(result: Result<AuthToken, APIError>) {}
-    
+
     open var email: String { return "example@test.com" }
     /// Return any custom informations that must be send when authenticate.
     open var customParameters: [String: Any]? {

@@ -18,6 +18,17 @@ superfluous_disable_command: warning
 opt_in_rules:
     - empty_count
 
+nesting:
+   type_level:
+      warning: 2
+
+line_length: 200
+
+disabled_rules:
+    - type_name
+    - file_length
+    - unused_setter_value
+
 function_parameter_count:
    warning: 7
    error: 10
