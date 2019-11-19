@@ -184,6 +184,15 @@ public protocol DataSource {
 public typealias RecordBase = NSManagedObject
 open class ___TABLE___: RecordBase {}
 
+extension NSManagedRecordBaseObject {
+    public var ___FIELD_1___: Any? { return nil }
+    public var ___FIELD_2___: Any? { return nil }
+    public var ___FIELD_3___: Any? { return nil }
+    public var ___FIELD_4___: Any? { return nil }
+    public var ___FIELD_5___: Any? { return nil }
+    public var ___FIELD_6___: Any? { return nil }
+}
+
 // MARK: - view binding
 public class Record: NSObject {
     public var store: Any // must be RecordBase
@@ -194,12 +203,6 @@ public class Record: NSObject {
     open override func value(forKeyPath keyPath: String) -> Any? {
         return (store as? [String: AnyObject])?[keyPath]
     }
-
-    public var ___FIELD_1___: Any?
-    public var ___FIELD_2___: Any?
-    public var ___FIELD_3___: Any?
-    public var ___FIELD_4___: Any?
-    public var ___FIELD_5___: Any?
 
 }
 
