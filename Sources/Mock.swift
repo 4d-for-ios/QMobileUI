@@ -34,7 +34,7 @@ public protocol ListFormSearchable: ListForm, UISearchBarDelegate {
 open class ListForm___LISTFORMTYPE___: UIViewController, ListFormSearchable {
     open var tableName: String { return "" }
     open var dataSource: DataSource? { return nil }
-    open var actionSheet: ActionSheet? { get }
+    open var actionSheet: ActionSheet? { return nil }
     open func onLoad() {}
     open func onWillAppear(_ animated: Bool) {}
     open func onDidAppear(_ animated: Bool) {}
@@ -54,7 +54,7 @@ open class ListForm___LISTFORMTYPE___: UIViewController, ListFormSearchable {
 open class ListFormTable: UITableViewController, ListFormSearchable {
     open var tableName: String { return "" }
     open var dataSource: DataSource? { return nil }
-    open var actionSheet: ActionSheet? { get }
+    open var actionSheet: ActionSheet? { return nil }
     open func onLoad() {}
     open func onWillAppear(_ animated: Bool) {}
     open func onDidAppear(_ animated: Bool) {}
@@ -74,7 +74,7 @@ open class ListFormTable: UITableViewController, ListFormSearchable {
 open class ListFormCollection: UICollectionViewController, ListFormSearchable {
     open var tableName: String { return "" }
     open var dataSource: DataSource? { return nil }
-    open var actionSheet: ActionSheet? { get }
+    open var actionSheet: ActionSheet? { return nil }
     open func onLoad() {}
     open func onWillAppear(_ animated: Bool) {}
     open func onDidAppear(_ animated: Bool) {}
