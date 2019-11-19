@@ -184,7 +184,7 @@ public protocol DataSource {
 public typealias RecordBase = NSManagedObject
 open class ___TABLE___: RecordBase {}
 
-extension NSManagedRecordBaseObject {
+extension RecordBase {
     public var ___FIELD_1___: Any? { return nil }
     public var ___FIELD_2___: Any? { return nil }
     public var ___FIELD_3___: Any? { return nil }
