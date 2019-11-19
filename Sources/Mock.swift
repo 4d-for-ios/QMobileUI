@@ -179,7 +179,7 @@ extension UIView {
 // MARK: - data
 public protocol DataSource {
     func performFetch()
-    var fetchedRecords: [Record]? { get }
+    var fetchedRecords: [Record] { get }
 }
 public typealias RecordBase = NSManagedObject
 open class ___TABLE___: RecordBase {}
