@@ -3,16 +3,15 @@ included:
 
 # rule identifiers to exclude from running
 disabled_rules:
-    - file_length
     - identifier_name
     - variable_name
-    - todo
+    - type_name
     - line_length
     - type_body_length
     - function_body_length
-    - type_name
     - file_length
     - unused_setter_value
+    - todo
 
 shorthand_operator: warning
 superfluous_disable_command: warning
