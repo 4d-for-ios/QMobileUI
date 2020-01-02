@@ -242,7 +242,7 @@ public protocol LoginFormDelegate: NSObjectProtocol {
 open class LoginForm: UIViewController {
 
     /// The login buttons.
-    @IBOutlet open weak var loginButton: LoadingButton!
+    @IBOutlet open weak var loginButton: UIButton!
     /// The text field for the login information ie. the email.
     @IBOutlet open weak var loginTextField: UITextField!
 
