@@ -258,6 +258,7 @@ open class LoginForm: UIViewController {
     open func onDidLogin(result: Result<AuthToken, APIError>) {}
 
     open var email: String { return "example@test.com" }
+    open var serverURL: String? { return "http://localhost" }
     /// Return any custom informations that must be send when authenticate.
     open var customParameters: [String: Any]? {
         return [:]
