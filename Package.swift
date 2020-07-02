@@ -20,7 +20,8 @@ let package = Package(
         //.package(url: "https://github.com/devicekit/DeviceKit.git", .upToNextMajor(from: "2.3.0")),
         .package(url: "https://github.com/phimage/DeviceKit.git", .branch("feature/macos")),
         .package(url: "https://github.com/DaveWoodCom/XCGLogger.git", from: "7.0.0"),
-        .package(url: "https://github.com/4d-for-ios/QMobileAPI.git", .revision("HEAD"))
+        .package(url: "https://github.com/4d-for-ios/QMobileAPI.git", .revision("HEAD")),
+        .package(url: "https://github.com/4d-for-ios/QMobileDataSync.git", .revision("HEAD"))
     ],
     targets: [
         .target(
