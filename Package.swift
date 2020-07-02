@@ -26,7 +26,7 @@ let package = Package(
     targets: [
         .target(
             name: "QMobileUI",
-            dependencies: ["XCGLogger", "IBAnimatable", "DeviceKit", "Prephirences", "QMobileAPI"],
+            dependencies: ["XCGLogger", "IBAnimatable", "DeviceKit", "Prephirences", "QMobileAPI", "QMobileDataSync"],
             path: "Sources")
     ]
 )
