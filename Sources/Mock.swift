@@ -8,6 +8,7 @@ import UIKit
 import CoreData
 import Prephirences
 import QMobileAPI
+import QMobileDataSync
 
 public protocol ListForm {
     var tableName: String { get }
@@ -50,6 +51,9 @@ open class ListForm___LISTFORMTYPE___: UIViewController, ListFormSearchable {
     open func onSearchButtonClicked() {}
     open func onSearchFetching() {}
     open func onSearchCancel() {}
+
+    open func onRefreshBegin() {}
+    open func onRefreshEnd(_ result: DataSync.SyncResult) {}
 }
 open class ListFormTable: UITableViewController, ListFormSearchable {
     open var tableName: String { return "" }
@@ -70,6 +74,9 @@ open class ListFormTable: UITableViewController, ListFormSearchable {
     open func onSearchButtonClicked() {}
     open func onSearchFetching() {}
     open func onSearchCancel() {}
+
+    open func onRefreshBegin() {}
+    open func onRefreshEnd(_ result: DataSync.SyncResult) {}
 }
 open class ListFormCollection: UICollectionViewController, ListFormSearchable {
     open var tableName: String { return "" }
@@ -90,6 +97,9 @@ open class ListFormCollection: UICollectionViewController, ListFormSearchable {
     open func onSearchButtonClicked() {}
     open func onSearchFetching() {}
     open func onSearchCancel() {}
+
+    open func onRefreshBegin() {}
+    open func onRefreshEnd(_ result: DataSync.SyncResult) {}
 
     @IBInspectable open var hasRefreshControl: Bool = true
     public var refreshControl: UIRefreshControl?
