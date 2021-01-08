@@ -275,6 +275,10 @@ open class LoginForm: UIViewController {
     open func onWillLogin() {}
     open func onDidLogin(result: Result<AuthToken, APIError>) {}
     open func couldLogin() -> Bool { return true }
+    
+    open func login(_ sender: Any!) {}
+    
+    open func couldLogin() -> Bool { return true }
 
     open var email: String { return "example@test.com" }
     open var serverURL: String? { return "http://localhost" }
@@ -510,4 +514,9 @@ extension UIActivityViewController {
 open class BarcodeScannerViewController: UIViewController {
     open var metadata: String?
     open func onMetaDataOutput(_ metadata: String) -> Bool { return true }
+    
+    open func hideInterface() {}
+    open func beginSession() {}
+    open func endSession() {}
+    open var onDismissCallback: ((UIViewController) -> Void)?
 }
