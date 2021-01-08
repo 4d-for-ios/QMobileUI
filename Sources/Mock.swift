@@ -507,7 +507,7 @@ extension UIActivityViewController {
 }
 
 // 18R6
-public class BarcodeScannerViewController: UIViewController {
+open class BarcodeScannerViewController: UIViewController {
     open var metadata: String?
     open func onMetaDataOutput(_ metadata: String) -> Bool { return true }
 }
