@@ -514,7 +514,7 @@ extension UIActivityViewController {
 open class BarcodeScannerViewController: UIViewController {
     open var metadata: String?
     open func onMetaDataOutput(_ metadata: String) -> Bool { return true }
-    
+    open func captureFrameError() {}
     open func hideInterface() {}
     open func beginSession() {}
     open func endSession() {}
