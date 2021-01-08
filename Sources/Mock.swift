@@ -64,6 +64,8 @@ open class ListFormTable: UITableViewController, ListFormSearchable {
     open func onDidAppear(_ animated: Bool) {}
     open func onWillDisappear(_ animated: Bool) {}
     open func onDidDisappear(_ animated: Bool) {}
+    open func onRecordChanged() {}
+    @objc override open func onSwipe(_ sender: UISwipeGestureRecognizer!) {}
 
     open var searchBar: UISearchBar!
     open var searchableAsTitle: Bool = true
@@ -87,6 +89,8 @@ open class ListFormCollection: UICollectionViewController, ListFormSearchable {
     open func onDidAppear(_ animated: Bool) {}
     open func onWillDisappear(_ animated: Bool) {}
     open func onDidDisappear(_ animated: Bool) {}
+    open func onRecordChanged() {}
+    @objc override open func onSwipe(_ sender: UISwipeGestureRecognizer!) {}
 
     open var searchBar: UISearchBar!
     open var searchableAsTitle: Bool = true
@@ -483,4 +487,8 @@ public extension CGRect {
     var mid: CGPoint {
         return CGPoint(x: midX, y: midY)
     }
+}
+
+public func foreground(execute work: @escaping @convention(block) () -> Swift.Void) {
+    DispatchQueue.main.async(execute: work)
 }
