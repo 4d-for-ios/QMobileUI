@@ -41,6 +41,8 @@ open class ListForm___LISTFORMTYPE___: UIViewController, ListFormSearchable {
     open func onDidAppear(_ animated: Bool) {}
     open func onWillDisappear(_ animated: Bool) {}
     open func onDidDisappear(_ animated: Bool) {}
+    open func onRecordChanged() {}
+    @objc open func onSwipe(_ sender: UISwipeGestureRecognizer!) {}
 
     open var searchBar: UISearchBar!
     open var searchableAsTitle: Bool = true
@@ -65,7 +67,7 @@ open class ListFormTable: UITableViewController, ListFormSearchable {
     open func onWillDisappear(_ animated: Bool) {}
     open func onDidDisappear(_ animated: Bool) {}
     open func onRecordChanged() {}
-    @objc override open func onSwipe(_ sender: UISwipeGestureRecognizer!) {}
+    @objc open func onSwipe(_ sender: UISwipeGestureRecognizer!) {}
 
     open var searchBar: UISearchBar!
     open var searchableAsTitle: Bool = true
@@ -90,7 +92,7 @@ open class ListFormCollection: UICollectionViewController, ListFormSearchable {
     open func onWillDisappear(_ animated: Bool) {}
     open func onDidDisappear(_ animated: Bool) {}
     open func onRecordChanged() {}
-    @objc override open func onSwipe(_ sender: UISwipeGestureRecognizer!) {}
+    @objc open func onSwipe(_ sender: UISwipeGestureRecognizer!) {}
 
     open var searchBar: UISearchBar!
     open var searchableAsTitle: Bool = true
@@ -204,6 +206,12 @@ extension RecordBase {
     public var ___FIELD_4___: Any? { return nil }
     public var ___FIELD_5___: Any? { return nil }
     public var ___FIELD_6___: Any? { return nil }
+}
+extension RecordBase {
+    open subscript(key: String) -> Any? {
+        get { return nil }
+        set {}
+    }
 }
 
 // MARK: - view binding
