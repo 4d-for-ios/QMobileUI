@@ -496,3 +496,8 @@ public extension CGRect {
 public func foreground(execute work: @escaping @convention(block) () -> Swift.Void) {
     DispatchQueue.main.async(execute: work)
 }
+
+extension UIActivityViewController {
+    /// Configure alert controller for iPad, by setting source view and rect
+    public func checkPopUp(_ sender: Any) {}
+}
