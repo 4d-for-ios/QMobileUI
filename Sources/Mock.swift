@@ -41,8 +41,6 @@ open class ListForm___LISTFORMTYPE___: UIViewController, ListFormSearchable {
     open func onDidAppear(_ animated: Bool) {}
     open func onWillDisappear(_ animated: Bool) {}
     open func onDidDisappear(_ animated: Bool) {}
-    open func onRecordChanged() {}
-    @objc open func onSwipe(_ sender: UISwipeGestureRecognizer!) {}
 
     open var searchBar: UISearchBar!
     open var searchableAsTitle: Bool = true
@@ -66,8 +64,6 @@ open class ListFormTable: UITableViewController, ListFormSearchable {
     open func onDidAppear(_ animated: Bool) {}
     open func onWillDisappear(_ animated: Bool) {}
     open func onDidDisappear(_ animated: Bool) {}
-    open func onRecordChanged() {}
-    @objc open func onSwipe(_ sender: UISwipeGestureRecognizer!) {}
 
     open var searchBar: UISearchBar!
     open var searchableAsTitle: Bool = true
@@ -91,8 +87,6 @@ open class ListFormCollection: UICollectionViewController, ListFormSearchable {
     open func onDidAppear(_ animated: Bool) {}
     open func onWillDisappear(_ animated: Bool) {}
     open func onDidDisappear(_ animated: Bool) {}
-    open func onRecordChanged() {}
-    @objc open func onSwipe(_ sender: UISwipeGestureRecognizer!) {}
 
     open var searchBar: UISearchBar!
     open var searchableAsTitle: Bool = true
@@ -154,6 +148,8 @@ open class DetailsForm___DETAILFORMTYPE___: UIViewController, DetailsForm {
     open func onDidAppear(_ animated: Bool) {}
     open func onWillDisappear(_ animated: Bool) {}
     open func onDidDisappear(_ animated: Bool) {}
+    open func onRecordChanged() {}
+    @objc open func onSwipe(_ sender: UISwipeGestureRecognizer!) {}
 
     @IBAction open func previousRecord(_ sender: Any!) {}
     @IBAction open func nextRecord(_ sender: Any!) {}
