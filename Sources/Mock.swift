@@ -274,6 +274,7 @@ open class LoginForm: UIViewController {
 
     open func onWillLogin() {}
     open func onDidLogin(result: Result<AuthToken, APIError>) {}
+    open func couldLogin() -> Bool { return true }
 
     open var email: String { return "example@test.com" }
     open var serverURL: String? { return "http://localhost" }
@@ -283,6 +284,9 @@ open class LoginForm: UIViewController {
     }
 
     open func performTransition(_ sender: Any? = nil) {
+    }
+    
+    open func displayInputError(message: String) {
     }
 }
 
@@ -500,4 +504,10 @@ public func foreground(execute work: @escaping @convention(block) () -> Swift.Vo
 extension UIActivityViewController {
     /// Configure alert controller for iPad, by setting source view and rect
     public func checkPopUp(_ sender: Any) {}
+}
+
+// 18R6
+public class BarcodeScannerViewController: UIViewController {
+    open var metadata: String?
+    open func onMetaDataOutput(_ metadata: String) -> Bool { return true }
 }
