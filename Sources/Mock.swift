@@ -277,9 +277,7 @@ open class LoginForm: UIViewController {
     open func couldLogin() -> Bool { return true }
     
     open func login(_ sender: Any!) {}
-    
-    open func couldLogin() -> Bool { return true }
-
+ 
     open var email: String { return "example@test.com" }
     open var serverURL: String? { return "http://localhost" }
     /// Return any custom informations that must be send when authenticate.
