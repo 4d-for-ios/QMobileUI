@@ -131,6 +131,7 @@ open class SettingURLForm: UITableViewController {
 
     // MARK: action
     @IBAction open func serverURLTextFieldEndEditing(_ sender: Any?) {}
+    open func performTransition(_ sender: Any?) {}
 }
 
 open class SettingsServerSectionFooter: UITableViewHeaderFooterView {}
