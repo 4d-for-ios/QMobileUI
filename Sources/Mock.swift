@@ -189,10 +189,9 @@ extension UIView {
 }
 
 // MARK: - data
-public protocol FetchedResultsControllerDelegate {
+public protocol FetchedResultsControllerDelegate: AnyObject {
 }
 public protocol FetchedResultsController {
-    
     var delegate: FetchedResultsControllerDelegate? { get }
 }
 
@@ -204,6 +203,7 @@ public protocol DataSource {
     var cellIdentifier: String? { get }
     var count: Integer? { get }
 }
+
 public typealias RecordBase = NSManagedObject
 open class ___TABLE___: RecordBase {}
 
@@ -286,9 +286,9 @@ open class LoginForm: UIViewController {
     open func onWillLogin() {}
     open func onDidLogin(result: Result<AuthToken, APIError>) {}
     open func couldLogin() -> Bool { return true }
-    
+
     open func login(_ sender: Any!) {}
- 
+
     open var email: String { return "example@test.com" }
     open var serverURL: String? { return "http://localhost" }
     /// Return any custom informations that must be send when authenticate.
@@ -298,7 +298,7 @@ open class LoginForm: UIViewController {
 
     open func performTransition(_ sender: Any? = nil) {
     }
-    
+
     open func displayInputError(message: String) {
     }
 }
