@@ -192,6 +192,7 @@ extension UIView {
 public protocol DataSource {
     func performFetch()
     var fetchedRecords: [Record] { get }
+    func record(at: IndexPath)
 }
 public typealias RecordBase = NSManagedObject
 open class ___TABLE___: RecordBase {}
