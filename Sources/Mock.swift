@@ -192,7 +192,7 @@ extension UIView {
 public protocol DataSource {
     func performFetch()
     var fetchedRecords: [Record] { get }
-    func record(at: IndexPath)
+    func record(at: IndexPath) -> Record
 }
 public typealias RecordBase = NSManagedObject
 open class ___TABLE___: RecordBase {}
@@ -222,7 +222,6 @@ public class Record: NSObject {
     open override func value(forKeyPath keyPath: String) -> Any? {
         return (store as? [String: AnyObject])?[keyPath]
     }
-
 }
 
 public extension UIView {
