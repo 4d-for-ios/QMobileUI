@@ -1,15 +1,15 @@
 //
+import CoreData
+import Prephirences
+import QMobileAPI
+import QMobileDataSync
+
 //  Mock.swift
 //  QMobileUI
 //
 
 import Foundation
 import UIKit
-import CoreData
-import Prephirences
-import QMobileAPI
-import QMobileDataSync
-
 public protocol ListForm {
     var tableName: String { get }
     var dataSource: DataSource? { get }
@@ -189,10 +189,20 @@ extension UIView {
 }
 
 // MARK: - data
+public protocol FetchedResultsControllerDelegate {
+}
+public protocol FetchedResultsController {
+    
+    var delegate: FetchedResultsControllerDelegate? { get }
+}
+
 public protocol DataSource {
     func performFetch()
     var fetchedRecords: [Record] { get }
     func record(at: IndexPath) -> Record
+    var fetchedResultsController: FetchedResultsController { get }
+    var cellIdentifier: String? { get }
+    var count: Integer? { get }
 }
 public typealias RecordBase = NSManagedObject
 open class ___TABLE___: RecordBase {}
