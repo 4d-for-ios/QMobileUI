@@ -201,7 +201,7 @@ public protocol DataSource {
     func record(at: IndexPath) -> Record
     var fetchedResultsController: FetchedResultsController { get }
     var cellIdentifier: String? { get }
-    var count: Integer? { get }
+    var count: Int? { get }
 }
 
 public typealias RecordBase = NSManagedObject
