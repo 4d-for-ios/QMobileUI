@@ -542,4 +542,16 @@ public extension RowType where Self: Eureka.BaseRow {
         return self
     }
 }
+public protocol ActionParameterCustomFormatRowBuilder {
 
+    /**
+     * Build a row according to format name.
+     *
+     * @param key : data key, ie. field name
+     * @param format: the custom format name
+     * @param onRowEvent: a callback that you must call on each row you build. If your row is RowType, then you could do `.onRowEvent(eventCallback)`
+     *
+     * @return the row or nil if format not taken into account.
+     */
+    func buildActionParameterCustomFormatRow(key: String, format: String, onRowEvent eventCallback: @escaping OnRowEventCallback) -> ActionParameterCustomFormatRowType?
+}
