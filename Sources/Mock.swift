@@ -3,7 +3,6 @@ import CoreData
 import Prephirences
 import QMobileAPI
 import QMobileDataSync
-
 //  Mock.swift
 //  QMobileUI
 //
@@ -529,3 +528,18 @@ open class BarcodeScannerViewController: UIViewController {
     open func endSession() {}
     open var onDismissCallback: ((UIViewController) -> Void)?
 }
+
+
+// Eureka
+import Eureka
+public typealias ActionParameterCustomFormatRowType = BaseRow
+
+public typealias OnRowEventCallback = (BaseCell?, BaseRow, RowEvent) -> Void
+
+public extension RowType where Self: Eureka.BaseRow {
+    /// Map all callback into one with event. Allow to pass generic code to BaseRow.
+    func onRowEvent(_ callback: @escaping OnRowEventCallback) -> BaseRow {
+        return self
+    }
+}
+
