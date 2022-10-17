@@ -532,7 +532,16 @@ open class BarcodeScannerViewController: UIViewController {
 
 // Eureka
 import Eureka
+
 public typealias ActionParameterCustomFormatRowType = BaseRow
+
+public enum RowEvent {
+    case onChange
+    case onCellSelection
+    case onCellHighlightChanged
+    case onRowValidationChanged
+    case cellUpdate, cellSetup
+}
 
 public typealias OnRowEventCallback = (BaseCell?, BaseRow, RowEvent) -> Void
 
