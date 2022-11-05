@@ -529,7 +529,6 @@ open class BarcodeScannerViewController: UIViewController {
     open var onDismissCallback: ((UIViewController) -> Void)?
 }
 
-
 // Eureka
 import Eureka
 
