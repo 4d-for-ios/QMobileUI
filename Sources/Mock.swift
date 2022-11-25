@@ -563,3 +563,14 @@ public protocol ActionParameterCustomFormatRowBuilder {
      */
     func buildActionParameterCustomFormatRow(key: String, format: String, onRowEvent eventCallback: @escaping OnRowEventCallback) -> ActionParameterCustomFormatRowType?
 }
+
+import SwiftMessages
+
+extension SwiftMessages {
+
+    public typealias Configure = (_ view: MessageView, _ config: SwiftMessages.Config) -> SwiftMessages.Config
+
+    public static func loading(_ message: String = "") {}
+
+    public static func warning(_ message: String, configure: Configure? = nil) {}
+}
