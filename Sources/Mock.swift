@@ -574,3 +574,14 @@ extension SwiftMessages {
 
     public static func warning(_ message: String, configure: Configure? = nil) {}
 }
+
+// v19r8
+
+open class ActionWebAreaController: UIViewController /*, WKUIDelegate, WKNavigationDelegate, UIScrollViewDelegate, WKScriptMessageHandler*/ {
+
+}
+
+// v20
+open class OpenURLForm: ActionWebAreaController {
+
+}
